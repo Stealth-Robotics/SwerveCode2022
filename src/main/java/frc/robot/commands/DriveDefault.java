@@ -27,6 +27,11 @@ public class DriveDefault extends CommandBase {
 
     @Override
     public void execute() {
+
+        System.out.println("X Power: " + translationXSupplier.getAsDouble());
+        System.out.println("Y Power: " + translationYSupplier.getAsDouble());
+        System.out.println("Rotation Power: " + rotationSupplier.getAsDouble());
+
         driveBase.drive(
                 ChassisSpeeds.fromFieldRelativeSpeeds(
                         translationXSupplier.getAsDouble(),
