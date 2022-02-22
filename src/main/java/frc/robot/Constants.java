@@ -51,5 +51,7 @@ public final class Constants {
                 // Back right
                 new Translation2d(-TRACKWIDTH / 2.0, -WHEELBASE / 2.0));
 
+        public static final double SPEED_MULTIPLIER = 1;
+
     }
 }
