@@ -23,35 +23,39 @@ import edu.wpi.first.math.util.Units;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-    public static final class DriveBase {
-        public static final double FRONT_LEFT_MODULE_STEER_OFFSET = -Math.toRadians(129.72);
-        public static final double FRONT_RIGHT_MODULE_STEER_OFFSET = -Math.toRadians(116.098);
-        public static final double BACK_LEFT_MODULE_STEER_OFFSET = -Math.toRadians(61.688);
-        public static final double BACK_RIGHT_MODULE_STEER_OFFSET = -Math.toRadians(245.558);
+        public static final class DriveBase {
 
-        public static final double TRACKWIDTH = Units.inchesToMeters(23.5);
-        public static final double WHEELBASE = Units.inchesToMeters(23.125);
+                // TODO: Tune To Your Robot
+                public static final double FRONT_LEFT_MODULE_STEER_OFFSET = -Math.toRadians(129.72);
+                public static final double FRONT_RIGHT_MODULE_STEER_OFFSET = -Math.toRadians(116.098);
+                public static final double BACK_LEFT_MODULE_STEER_OFFSET = -Math.toRadians(61.688);
+                public static final double BACK_RIGHT_MODULE_STEER_OFFSET = -Math.toRadians(245.558);
 
-        public static final double MAX_VOLTAGE = 12.0;
+                // TODO: Tune To Your Robot
+                public static final double TRACKWIDTH = Units.inchesToMeters(23.5);
+                public static final double WHEELBASE = Units.inchesToMeters(23.125);
 
-        public static final double MAX_VELOCITY_METERS_PER_SECOND = 6380.0 / 60.0 *
-                SdsModuleConfigurations.MK4_L2.getDriveReduction() *
-                SdsModuleConfigurations.MK4_L2.getWheelDiameter() * Math.PI;
+                // TODO: Tune TO Your Robot
+                public static final double SPEED_MULTIPLIER = 1;
 
-        public static final double MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND = MAX_VELOCITY_METERS_PER_SECOND /
-                Math.hypot(TRACKWIDTH / 2.0, WHEELBASE / 2.0);
+                public static final double MAX_VOLTAGE = 12.0;
 
-        public static final SwerveDriveKinematics DRIVE_KINEMATICS = new SwerveDriveKinematics(
-                // Front left
-                new Translation2d(TRACKWIDTH / 2.0, WHEELBASE / 2.0),
-                // Front right
-                new Translation2d(TRACKWIDTH / 2.0, -WHEELBASE / 2.0),
-                // Back left
-                new Translation2d(-TRACKWIDTH / 2.0, WHEELBASE / 2.0),
-                // Back right
-                new Translation2d(-TRACKWIDTH / 2.0, -WHEELBASE / 2.0));
+                public static final double MAX_VELOCITY_METERS_PER_SECOND = 6380.0 / 60.0 *
+                                SdsModuleConfigurations.MK4_L2.getDriveReduction() *
+                                SdsModuleConfigurations.MK4_L2.getWheelDiameter() * Math.PI;
 
-        public static final double SPEED_MULTIPLIER = 1;
+                public static final double MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND = MAX_VELOCITY_METERS_PER_SECOND /
+                                Math.hypot(TRACKWIDTH / 2.0, WHEELBASE / 2.0);
 
-    }
+                public static final SwerveDriveKinematics DRIVE_KINEMATICS = new SwerveDriveKinematics(
+                                // Front left
+                                new Translation2d(TRACKWIDTH / 2.0, WHEELBASE / 2.0),
+                                // Front right
+                                new Translation2d(TRACKWIDTH / 2.0, -WHEELBASE / 2.0),
+                                // Back left
+                                new Translation2d(-TRACKWIDTH / 2.0, WHEELBASE / 2.0),
+                                // Back right
+                                new Translation2d(-TRACKWIDTH / 2.0, -WHEELBASE / 2.0));
+
+        }
 }
